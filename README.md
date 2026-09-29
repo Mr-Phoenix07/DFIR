@@ -1,7 +1,15 @@
-# DFIR
-Understanding the artifacts of the incident or an event and analysis of it
+# DFIR: Digital Forensics & Incident Response
 
-## 📅 DFIR Daily: Digital Forensics from Basic to Advanced
+**Learn to investigate cyber incidents, from the basics to advanced practice: find the evidence, understand what happened, and prove it.**
+
+![Updated daily](https://img.shields.io/badge/updated-daily-2ea44f)
+![60 lessons](https://img.shields.io/badge/lessons-60-blue)
+![180 tools](https://img.shields.io/badge/tools-180-orange)
+![Beginner to Advanced](https://img.shields.io/badge/level-beginner%20%E2%86%92%20advanced-purple)
+
+DFIR is the work of collecting and analysing digital evidence (disks, memory, network traffic, logs, phones and cloud accounts) to answer **what happened, when, how, and who was involved**. This repo is a free, hands-on course that teaches it one day at a time.
+
+## 📅 DFIR Daily
 
 A new lesson is posted **every day**. Each one covers:
 
@@ -16,7 +24,6 @@ A new lesson is posted **every day**. Each one covers:
 | Day | Date | Topic | Tools | Level |
 |----:|------|-------|-------|:-----:|
 | 01 | 2026-09-28 | [Introduction to Digital Forensics & Building Your DFIR Lab](days/day-01-intro-to-dfir-and-lab-setup.md) | SIFT Workstation · CyberChef · Eric Zimmerman's Tools | 🟢 |
-
 <!-- NEXT-DAY-ROW -->
 
 Legend: 🟢 Beginner · 🟡 Intermediate · 🔴 Advanced
