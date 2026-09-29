@@ -24,6 +24,7 @@ A new lesson is posted **every day**. Each one covers:
 | Day | Date | Topic | Tools | Level |
 |----:|------|-------|-------|:-----:|
 | 01 | 2026-09-28 | [Introduction to Digital Forensics & Building Your DFIR Lab](days/day-01-intro-to-dfir-and-lab-setup.md) | SIFT Workstation · CyberChef · Eric Zimmerman's Tools | 🟢 |
+| 02 | 2026-09-29 | [Evidence Handling, Chain of Custody, Integrity & Hashing](days/day-02-evidence-handling-chain-of-custody-hashing.md) | hashdeep · ssdeep · HashMyFiles | 🟢 |
 <!-- NEXT-DAY-ROW -->
 
 Legend: 🟢 Beginner · 🟡 Intermediate · 🔴 Advanced
