@@ -25,6 +25,7 @@ A new lesson is posted **every day**. Each one covers:
 |----:|------|-------|-------|:-----:|
 | 01 | 2026-09-28 | [Introduction to Digital Forensics & Building Your DFIR Lab](days/day-01-intro-to-dfir-and-lab-setup.md) | SIFT Workstation · CyberChef · Eric Zimmerman's Tools | 🟢 |
 | 02 | 2026-09-29 | [Evidence Handling, Chain of Custody, Integrity & Hashing](days/day-02-evidence-handling-chain-of-custody-hashing.md) | hashdeep · ssdeep · HashMyFiles | 🟢 |
+| 03 | 2026-09-30 | [Storage Media, Partitions (MBR/GPT), Hex & File Signatures](days/day-03-storage-partitions-hex-file-signatures.md) | HxD · ImHex · TestDisk | 🟢 |
 <!-- NEXT-DAY-ROW -->
 
 Legend: 🟢 Beginner · 🟡 Intermediate · 🔴 Advanced
