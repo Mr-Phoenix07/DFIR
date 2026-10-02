@@ -27,6 +27,7 @@ A new lesson is posted **every day**. Each one covers:
 | 02 | 2026-09-29 | [Evidence Handling, Chain of Custody, Integrity & Hashing](days/day-02-evidence-handling-chain-of-custody-hashing.md) | hashdeep · ssdeep · HashMyFiles | 🟢 |
 | 03 | 2026-09-30 | [Storage Media, Partitions (MBR/GPT), Hex & File Signatures](days/day-03-storage-partitions-hex-file-signatures.md) | HxD · ImHex · TestDisk | 🟢 |
 | 04 | 2026-10-01 | [File System Fundamentals: FAT/exFAT, NTFS, ext4, APFS & MACB Timestamps](days/day-04-file-system-fundamentals-and-timestamps.md) | The Sleuth Kit · Autopsy · fatcat | 🟢→🟡 |
+| 05 | 2026-10-02 | [Disk Acquisition: Physical vs Logical, Write Blocking & Image Formats](days/day-05-disk-acquisition-write-blocking-image-formats.md) | FTK Imager · Guymager · dc3dd | 🟢→🟡 |
 <!-- NEXT-DAY-ROW -->
 
 Legend: 🟢 Beginner · 🟡 Intermediate · 🔴 Advanced
