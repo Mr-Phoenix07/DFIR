@@ -371,13 +371,15 @@ mkdir -p ~/cases/LAB-005/{evidence,images,notes,work} && cd ~/cases/LAB-005
 
 ### Lab 1: Build a "suspect USB" and write-block it (15 min)
 
+> 📝 **Corrected 2026-10-04:** `mkfs.vfat` takes its size argument in **KiB**, so the partition's 129,024 sectors are `64512`. The first version of this lab passed `129024`, which created a file system twice the size of its partition. The command and all the hashes below have been updated. Rebuild the image if you did the lab before this fix.
+
 The image below is **deterministic**. Built on a UTC system, it always has the same SHA-256, so you can check every step against the expected output.
 
 ```bash
 cd ~/cases/LAB-005/evidence
 truncate -s 64M suspect-usb.raw
 printf 'label: dos\nlabel-id: 0x5005b00c\nstart=2048, type=c\n' | sfdisk -q suspect-usb.raw
-mkfs.vfat -F 32 --invariant -i 2026DF1A --offset=2048 -h 2048 -n SUSPECT suspect-usb.raw 129024 >/dev/null 2>&1
+mkfs.vfat -F 32 --invariant -i 2026DF1A --offset=2048 -h 2048 -n SUSPECT suspect-usb.raw 64512 >/dev/null 2>&1
 printf 'employee,amount\nalice,4200\nbob,3900\n' > /tmp/payroll.csv
 touch -d "2026-09-30 17:45:10 UTC" /tmp/payroll.csv
 TZ=UTC mcopy -m -i suspect-usb.raw@@1M /tmp/payroll.csv ::/
@@ -387,7 +389,7 @@ sha256sum suspect-usb.raw
 Expected output:
 
 ```
-9f9a1291cbb96c0262c58627bf3b047f6044d121130a0c169ff21272576ed4a6  suspect-usb.raw
+d52f42ce2a4101729fc449262258eef138004c15bf93e50b7bea4222b9a60694  suspect-usb.raw
 ```
 
 Attach it as a **read-only block device**, the software equivalent of plugging the stick into a write blocker:
@@ -430,13 +432,13 @@ sector size: 512 bytes (probed)
 input results for device `/dev/loop0':
    131072 sectors in
    0 bad sectors replaced by zeros
-   3296a7680ec04f493a57ec50b4dbfd9e (md5)
-   9f9a1291cbb96c0262c58627bf3b047f6044d121130a0c169ff21272576ed4a6 (sha256)
+   84674a824b2eecdb7ab47cd7b9a0cad1 (md5)
+   d52f42ce2a4101729fc449262258eef138004c15bf93e50b7bea4222b9a60694 (sha256)
 
 output results for file `images/LAB005_EV001.dd':
    131072 sectors out
-   [ok] 3296a7680ec04f493a57ec50b4dbfd9e (md5)
-   [ok] 9f9a1291cbb96c0262c58627bf3b047f6044d121130a0c169ff21272576ed4a6 (sha256)
+   [ok] 84674a824b2eecdb7ab47cd7b9a0cad1 (md5)
+   [ok] d52f42ce2a4101729fc449262258eef138004c15bf93e50b7bea4222b9a60694 (sha256)
 ```
 
 Read it like an examiner:
@@ -472,21 +474,21 @@ Expected output:
 input results for device `/dev/loop0':
    131072 sectors in
    0 bad sectors replaced by zeros
-   9f9a1291cbb96c0262c58627bf3b047f6044d121130a0c169ff21272576ed4a6 (sha256)
-      277f29f8c0d938810e3443c11e281d70196b22c777baeac8ce699478ca7ae598, sectors 0 - 32767
+   d52f42ce2a4101729fc449262258eef138004c15bf93e50b7bea4222b9a60694 (sha256)
+      d86e5810f2cd8299aa51b9cd9f685da7d908368856c691cb244cd15862412f3b, sectors 0 - 32767
       080acf35a507ac9849cfcba47dc2ad83e01b75663a516279c8b9d243b719643e, sectors 32768 - 65535
       080acf35a507ac9849cfcba47dc2ad83e01b75663a516279c8b9d243b719643e, sectors 65536 - 98303
       080acf35a507ac9849cfcba47dc2ad83e01b75663a516279c8b9d243b719643e, sectors 98304 - 131071
 
 output results for files `images/split/LAB005_EV001.000':
    131072 sectors out
-   [ok] 9f9a1291cbb96c0262c58627bf3b047f6044d121130a0c169ff21272576ed4a6 (sha256)
-      [ok] 277f29f8…, sectors 0 - 32767, `images/split/LAB005_EV001.000'
+   [ok] d52f42ce2a4101729fc449262258eef138004c15bf93e50b7bea4222b9a60694 (sha256)
+      [ok] d86e5810…, sectors 0 - 32767, `images/split/LAB005_EV001.000'
       [ok] 080acf35…, sectors 32768 - 65535, `images/split/LAB005_EV001.001'
       ...
 output results for file `images/copy2/LAB005_EV001.dd':
    131072 sectors out
-   [ok] 9f9a1291cbb96c0262c58627bf3b047f6044d121130a0c169ff21272576ed4a6 (sha256)
+   [ok] d52f42ce2a4101729fc449262258eef138004c15bf93e50b7bea4222b9a60694 (sha256)
 ```
 
 Two things to notice:
@@ -497,7 +499,7 @@ Two things to notice:
 Reassemble the split image and confirm it's identical to the device:
 
 ```bash
-cat images/split/LAB005_EV001.0* | sha256sum      # -> 9f9a1291…ed4a6
+cat images/split/LAB005_EV001.0* | sha256sum      # -> d52f42ce…0694
 ```
 
 TSK can also read split raw images directly: `mmls images/split/LAB005_EV001.0*`.
@@ -517,7 +519,7 @@ Expected output:
 exit code: 0
 output results for file `work/corrupt.dd':
    131072 sectors out
-   [MISMATCH] 9606bd29d3d973d95da5f35d9fee1a1f39700fbcc57c555a0f9f2828afa4a2ed (sha256)
+   [MISMATCH] 71e48d27f31f7e172d9174922ab1c032d4d9aeb1c33538a6adef6e107f1f5b6b (sha256)
 ```
 
 The **exit code is 0** even though verification failed. A script that only checks `$?` would report success. Always check the log, for example:

@@ -156,12 +156,7 @@ tar xzf libewf-experimental-<VER>.tar.gz && cd libewf-<VER>
 ./configure && make -j"$(nproc)" && sudo make install && sudo ldconfig
 ```
 
-**macOS:**
-
-```bash
-brew install libewf          # then: ewfinfo -V
-# ewfmount additionally needs macFUSE
-```
+**macOS:** there's no Homebrew core formula for libewf. Build it from the release tarball, as for Linux above (install the build tools with `xcode-select --install` and `brew install autoconf automake libtool pkg-config`). `ewfmount` additionally needs macFUSE. Or run the tools in a Linux VM.
 
 **Windows:** use WSL2 (`sudo apt install ewf-tools` inside Ubuntu), or rely on FTK Imager / Arsenal Image Mounter for E01 handling.
 
@@ -299,7 +294,7 @@ Mounting creates two files: the converted image (e.g., `NAME.dd` or `NAME.vdi`) 
 sudo xmount --in ewf LAB006_EV001.E01 /mnt/xm && ls -l /mnt/xm && sha256sum /mnt/xm/*.dd
 ```
 
-The SHA-256 should be `9f9a1291…ed4a6` (Lab 6).
+The SHA-256 should be `d52f42ce…0694` (Lab 6).
 
 #### Troubleshooting
 
@@ -324,17 +319,19 @@ sudo mkdir -p /mnt/ewf /mnt/xm /mnt/lab6
 
 ### Lab 1: Acquire to E01 with case metadata (10 min)
 
+> 📝 **Corrected 2026-10-04:** `mkfs.vfat` takes its size argument in **KiB**, so the partition's 129,024 sectors are `64512`. The first version of this lab passed `129024`, which created a file system twice the size of its partition. The command and all the hashes below have been updated. Rebuild the image if you did the lab before this fix.
+
 Rebuild Day 5's deterministic "suspect USB" (the same commands as Day 5, Lab 1) and attach it read-only:
 
 ```bash
 cd ~/cases/LAB-006/evidence
 truncate -s 64M suspect-usb.raw
 printf 'label: dos\nlabel-id: 0x5005b00c\nstart=2048, type=c\n' | sfdisk -q suspect-usb.raw
-mkfs.vfat -F 32 --invariant -i 2026DF1A --offset=2048 -h 2048 -n SUSPECT suspect-usb.raw 129024 >/dev/null 2>&1
+mkfs.vfat -F 32 --invariant -i 2026DF1A --offset=2048 -h 2048 -n SUSPECT suspect-usb.raw 64512 >/dev/null 2>&1
 printf 'employee,amount\nalice,4200\nbob,3900\n' > /tmp/payroll.csv
 touch -d "2026-09-30 17:45:10 UTC" /tmp/payroll.csv
 TZ=UTC mcopy -m -i suspect-usb.raw@@1M /tmp/payroll.csv ::/
-sha256sum suspect-usb.raw                     # -> 9f9a1291…ed4a6 (same as Day 5)
+sha256sum suspect-usb.raw                     # -> d52f42ce…0694 (same as Day 5)
 DEV=$(sudo losetup -f --show -r suspect-usb.raw)
 ```
 
@@ -354,8 +351,8 @@ Expected output (the end):
 
 ```
 Written: 64 MiB (67110180 bytes) in 1 second(s) with 64 MiB/s (67110180 bytes/second).
-MD5 hash calculated over data:		3296a7680ec04f493a57ec50b4dbfd9e
-SHA256 hash calculated over data:	9f9a1291cbb96c0262c58627bf3b047f6044d121130a0c169ff21272576ed4a6
+MD5 hash calculated over data:		84674a824b2eecdb7ab47cd7b9a0cad1
+SHA256 hash calculated over data:	d52f42ce2a4101729fc449262258eef138004c15bf93e50b7bea4222b9a60694
 ewfacquire: SUCCESS
 ```
 
@@ -387,7 +384,7 @@ Media information
 	Bytes per sector:	512
 	Number of sectors:	131072
 Digest hash information
-	MD5:			3296a7680ec04f493a57ec50b4dbfd9e
+	MD5:			84674a824b2eecdb7ab47cd7b9a0cad1
 ```
 
 ```bash
@@ -397,10 +394,10 @@ ewfverify -d sha256 LAB006_EV001.E01
 Expected output (an extract):
 
 ```
-MD5 hash stored in file:		3296a7680ec04f493a57ec50b4dbfd9e
-MD5 hash calculated over data:		3296a7680ec04f493a57ec50b4dbfd9e
+MD5 hash stored in file:		84674a824b2eecdb7ab47cd7b9a0cad1
+MD5 hash calculated over data:		84674a824b2eecdb7ab47cd7b9a0cad1
 SHA256 hash stored in file:		N/A
-SHA256 hash calculated over data:	9f9a1291cbb96c0262c58627bf3b047f6044d121130a0c169ff21272576ed4a6
+SHA256 hash calculated over data:	d52f42ce2a4101729fc449262258eef138004c15bf93e50b7bea4222b9a60694
 ewfverify: SUCCESS
 ```
 
@@ -427,8 +424,8 @@ Expected output (the sector numbers may differ):
 Sector validation errors:
 	total number: 1
 	at sector(s): 68544 - 68607 (number: 64) in segment file(s): …/damaged.E01
-MD5 hash stored in file:		3296a7680ec04f493a57ec50b4dbfd9e
-MD5 hash calculated over data:		3296a7680ec04f493a57ec50b4dbfd9e
+MD5 hash stored in file:		84674a824b2eecdb7ab47cd7b9a0cad1
+MD5 hash calculated over data:		84674a824b2eecdb7ab47cd7b9a0cad1
 Unable to verify input.
 ewfverify: FAILURE
 exit code: 1
@@ -444,7 +441,7 @@ exit code: 1
 cd ~/cases/LAB-006/images
 sudo ewfmount LAB006_EV001.E01 /mnt/ewf
 ls -l /mnt/ewf                                 # -r--r--r-- … ewf1  (read-only, 67108864 bytes)
-sudo sha256sum /mnt/ewf/ewf1                   # -> 9f9a1291…ed4a6
+sudo sha256sum /mnt/ewf/ewf1                   # -> d52f42ce…0694
 sudo mmls /mnt/ewf/ewf1                        # partition at sector 2048
 sudo fls -o 2048 /mnt/ewf/ewf1                 # -> r/r 4: payroll.csv
 sudo mtype -i /mnt/ewf/ewf1@@1M ::/payroll.csv # read a file without mounting the FS
@@ -477,7 +474,7 @@ Convert the E01 back to raw (for tools that can't read E01):
 
 ```bash
 ewfexport -u -t ../work/LAB006_EV001_export -f raw LAB006_EV001.E01
-sha256sum ../work/LAB006_EV001_export.raw      # -> 9f9a1291…ed4a6
+sha256sum ../work/LAB006_EV001_export.raw      # -> d52f42ce…0694
 ```
 
 ### Lab 5: The journal-replay trap (15 min)
@@ -538,7 +535,7 @@ sha256sum LAB006_EV001.E01 > ../notes/e01-file.sha256       # container hash, to
 # 1. Raw view
 sudo xmount --in ewf LAB006_EV001.E01 /mnt/xm
 ls -l /mnt/xm                                     # LAB006_EV001.dd + LAB006_EV001.info
-sudo sha256sum /mnt/xm/LAB006_EV001.dd            # -> 9f9a1291…ed4a6
+sudo sha256sum /mnt/xm/LAB006_EV001.dd            # -> d52f42ce…0694
 sudo cat /mnt/xm/LAB006_EV001.info                # case metadata and MD5 from the E01
 sudo umount /mnt/xm
 
