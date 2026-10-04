@@ -29,6 +29,7 @@ A new lesson is posted **every day**. Each one covers:
 | 04 | 2026-10-01 | [File System Fundamentals: FAT/exFAT, NTFS, ext4, APFS & MACB Timestamps](days/day-04-file-system-fundamentals-and-timestamps.md) | The Sleuth Kit · Autopsy · fatcat | 🟢→🟡 |
 | 05 | 2026-10-02 | [Disk Acquisition: Physical vs Logical, Write Blocking & Image Formats](days/day-05-disk-acquisition-write-blocking-image-formats.md) | FTK Imager · Guymager · dc3dd | 🟢→🟡 |
 | 06 | 2026-10-03 | [Forensic Image Formats, Verification & Mounting Images Safely](days/day-06-image-formats-verification-and-mounting.md) | libewf (ewf-tools) · Arsenal Image Mounter · xmount | 🟡 |
+| 07 | 2026-10-04 | [Data Recovery & File Carving](days/day-07-data-recovery-and-file-carving.md) | PhotoRec · Foremost · Scalpel | 🟡 |
 <!-- NEXT-DAY-ROW -->
 
 Legend: 🟢 Beginner · 🟡 Intermediate · 🔴 Advanced
