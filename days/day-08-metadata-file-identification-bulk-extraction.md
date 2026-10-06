@@ -669,7 +669,7 @@ The hit belongs to the **deleted** `notes.txt` (entry 11). You can now report it
 
 ## ⏭️ Tomorrow: Day 09 (Phase 2: Windows Forensics begins)
 
-**Windows triage collection**. Tools: **KAPE**, **CyLR**, **DFIR ORC**.
+**Windows triage collection**. Tools: **KAPE**, **AChoirX** (replacing the unmaintained CyLR), **DFIR ORC**.
 We move from general foundations to Windows: which artifacts to collect from a live or dead Windows system, how to collect them quickly and soundly, and how to build repeatable collection profiles.
 
 ---
