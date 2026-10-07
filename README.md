@@ -31,6 +31,7 @@ A new lesson is posted **every day**. Each one covers:
 | 06 | 2026-10-03 | [Forensic Image Formats, Verification & Mounting Images Safely](days/day-06-image-formats-verification-and-mounting.md) | libewf (ewf-tools) · Arsenal Image Mounter · xmount | 🟡 |
 | 07 | 2026-10-04 | [Data Recovery & File Carving](days/day-07-data-recovery-and-file-carving.md) | PhotoRec · Foremost · Scalpel | 🟡 |
 | 08 | 2026-10-05 | [Metadata, File-Type Identification & Bulk Feature Extraction](days/day-08-metadata-file-identification-bulk-extraction.md) | ExifTool · TrID · bulk_extractor | 🟡 |
+| 09 | 2026-10-06 | [Windows Triage Collection](days/day-09-windows-triage-collection.md) | KAPE · AChoirX · DFIR ORC | 🟡 |
 <!-- NEXT-DAY-ROW -->
 
 Legend: 🟢 Beginner · 🟡 Intermediate · 🔴 Advanced

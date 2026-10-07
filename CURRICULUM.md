@@ -28,7 +28,7 @@ Legend: 🟢 Beginner · 🟡 Intermediate · 🔴 Advanced
 
 | Day | Topic | Tools |
 |----:|-------|-------|
-| 09 | Windows triage collection | KAPE · CyLR · DFIR ORC |
+| 09 | Windows triage collection | KAPE · AChoirX¹ · DFIR ORC |
 | 10 | NTFS deep dive: $MFT, $UsnJrnl:$J, $LogFile, $I30 | MFTECmd · NTFS Log Tracker · analyzeMFT |
 | 11 | Windows Registry fundamentals: hives, keys, transaction logs | Registry Explorer · RECmd · RegRipper |
 | 12 | Evidence of execution: Prefetch, Amcache, Shimcache, BAM/DAM | PECmd · AmcacheParser · AppCompatCacheParser |
@@ -125,3 +125,7 @@ Legend: 🟢 Beginner · 🟡 Intermediate · 🔴 Advanced
 
 > The schedule may be adjusted slightly as tools change (for example a tool is deprecated or replaced).
 > Any change is noted in the day's post.
+
+### Tool changes
+
+1. **Day 09:** CyLR → **AChoirX**. CyLR has had no commits since 2021-10-12 and targets .NET Core 3.1, which reached end of life in December 2022. AChoirX is actively maintained (v10.01.85, May 2026) and cross-platform.
