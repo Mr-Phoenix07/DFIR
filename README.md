@@ -33,6 +33,7 @@ A new lesson is posted **every day**. Each one covers:
 | 08 | 2026-10-05 | [Metadata, File-Type Identification & Bulk Feature Extraction](days/day-08-metadata-file-identification-bulk-extraction.md) | ExifTool · TrID · bulk_extractor | 🟡 |
 | 09 | 2026-10-06 | [Windows Triage Collection](days/day-09-windows-triage-collection.md) | KAPE · AChoirX · DFIR ORC | 🟡 |
 | 10 | 2026-10-07 | [NTFS Deep Dive: $MFT, $UsnJrnl:$J, $LogFile & $I30](days/day-10-ntfs-mft-usnjrnl-logfile-i30.md) | MFTECmd · NTFS Log Tracker · analyzeMFT | 🟡 |
+| 11 | 2026-10-08 | [Windows Registry Fundamentals: Hives, Keys & Transaction Logs](days/day-11-windows-registry-hives-keys-transaction-logs.md) | Registry Explorer · RECmd · RegRipper | 🟡 |
 <!-- NEXT-DAY-ROW -->
 
 Legend: 🟢 Beginner · 🟡 Intermediate · 🔴 Advanced
