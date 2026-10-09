@@ -34,6 +34,7 @@ A new lesson is posted **every day**. Each one covers:
 | 09 | 2026-10-06 | [Windows Triage Collection](days/day-09-windows-triage-collection.md) | KAPE · AChoirX · DFIR ORC | 🟡 |
 | 10 | 2026-10-07 | [NTFS Deep Dive: $MFT, $UsnJrnl:$J, $LogFile & $I30](days/day-10-ntfs-mft-usnjrnl-logfile-i30.md) | MFTECmd · NTFS Log Tracker · analyzeMFT | 🟡 |
 | 11 | 2026-10-08 | [Windows Registry Fundamentals: Hives, Keys & Transaction Logs](days/day-11-windows-registry-hives-keys-transaction-logs.md) | Registry Explorer · RECmd · RegRipper | 🟡 |
+| 12 | 2026-10-09 | [Evidence of Execution: Prefetch, Amcache, Shimcache & BAM/DAM](days/day-12-evidence-of-execution-prefetch-amcache-shimcache-bam.md) | PECmd · AmcacheParser · AppCompatCacheParser | 🟡 |
 <!-- NEXT-DAY-ROW -->
 
 Legend: 🟢 Beginner · 🟡 Intermediate · 🔴 Advanced
