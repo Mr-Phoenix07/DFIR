@@ -36,6 +36,7 @@ A new lesson is posted **every day**. Each one covers:
 | 11 | 2026-10-08 | [Windows Registry Fundamentals: Hives, Keys & Transaction Logs](days/day-11-windows-registry-hives-keys-transaction-logs.md) | Registry Explorer · RECmd · RegRipper | 🟡 |
 | 12 | 2026-10-09 | [Evidence of Execution: Prefetch, Amcache, Shimcache & BAM/DAM](days/day-12-evidence-of-execution-prefetch-amcache-shimcache-bam.md) | PECmd · AmcacheParser · AppCompatCacheParser | 🟡 |
 | 13 | 2026-10-10 | [File & Folder Knowledge: LNK Files, Jump Lists & ShellBags](days/day-13-lnk-jump-lists-shellbags.md) | LECmd · JLECmd · ShellBags Explorer (SBECmd) | 🟡 |
+| 14 | 2026-10-11 | [Windows Event Logs: EVTX Structure & Key Event IDs](days/day-14-windows-event-logs-evtx.md) | EvtxECmd · evtx_dump · FullEventLogView | 🟡 |
 <!-- NEXT-DAY-ROW -->
 
 Legend: 🟢 Beginner · 🟡 Intermediate · 🔴 Advanced
