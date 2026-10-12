@@ -811,7 +811,7 @@ EOF
 
 ```
 hayabusa work/spray.csv: 1 detection(s)
-    2026-09-29 01:04:10 Failed Network Logons for Several Accounts from One Source | Count:3 ¦ TargetUserName:admin/administrator/bob ¦ IpAddress:10.20.30.45 ¦ LogonType:3
+    2026-09-29 01:04:10 Failed Network Logons for Several Accounts from One Source | Count:3 ¦ TargetUserName:admin/administrator/bob ¦ IpAddress:10.20.30.45
 hayabusa work/spray-samples.csv: 0 detection(s)
 ```
 
