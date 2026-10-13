@@ -19,7 +19,7 @@ SHOW = {  # event ID -> fields to print, in this order
     1: ["RuleName", "Image", "CommandLine", "ParentImage"],
     3: ["RuleName", "Image", "Protocol", "Initiated", "DestinationIp", "DestinationPort"],
     4: ["State", "Version", "SchemaVersion"],
-    5: ["Image"],
+    5: ["RuleName", "Image"],
     11: ["RuleName", "Image", "TargetFilename"],
     16: ["Configuration", "ConfigurationFileHash"],
     23: ["Image", "TargetFilename"],

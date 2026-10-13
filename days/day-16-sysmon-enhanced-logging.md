@@ -445,7 +445,7 @@ sudo sysmon -u > /dev/null 2>&1
   1 ProcessCreate      RuleName=lab-cmd | Image=/usr/bin/curl | CommandLine=curl -s -o /tmp/day16/stage2.sh http://127.0.0.1:8016/stage.sh
   3 NetworkConnect     RuleName=lab-net | Image=/usr/bin/curl | Protocol=tcp | Initiated=true | DestinationIp=127.0.0.1 | DestinationPort=8016
  11 FileCreate         RuleName=lab-drop | Image=/usr/bin/curl | TargetFilename=/tmp/day16/stage2.sh
-  5 ProcessTerminate   Image=/usr/bin/curl
+  5 ProcessTerminate   RuleName=lab-end | Image=/usr/bin/curl
 43b2c7a750a8c2c8075c70b42d7fa763a46d2761c519a1674ffa543e235bd2bb
 low      Curl Usage on Linux | EventID 1 | /usr/bin/curl
 low      Curl Usage on Linux | EventID 3 | /usr/bin/curl
@@ -652,7 +652,8 @@ The ProcessGuid gives each process's start time, and the **parent's** GUID gives
 
 ```bash
 sigma list targets
-sigma list pipelines
+sigma list pipelines | awk -F '|' 'NF > 5 { for (i = 2; i <= 4; i++) gsub(/^ +| +$/, "", $i);
+    if ($2 != "Identifier") printf "%-27s %s\n", $2, $4 }'
 RC=~/tools/sigma/rules/windows/process_creation/proc_creation_win_pua_rclone_execution.yml
 sigma convert -t splunk -p sysmon -p splunk_windows $RC 2> /dev/null
 sigma convert -t splunk -p windows-audit -p splunk_windows $RC 2> /dev/null
@@ -667,16 +668,12 @@ sigma convert -t sqlite -p sysmon $RC 2> /dev/null | cut -c1-150
 | splunk_spl2 | Splunk SPL2 queries                    | Yes                          | splunk |
 | sqlite      | SQLite backend                         | No                           | sqlite |
 +-------------+----------------------------------------+------------------------------+--------+
-+----------------------------+----------+----------------------------------------------------+---------------------+---------+
-| Identifier                 | Priority | Processing Pipeline                                | Backends            | Plugin  |
-+----------------------------+----------+----------------------------------------------------+---------------------+---------+
-| splunk_windows             | 20       | Splunk Windows log source conditions               | splunk, splunk_spl2 | splunk  |
-| splunk_sysmon_acceleration | 25       | Splunk Windows Sysmon search acceleration keywords | splunk, splunk_spl2 | splunk  |
-| splunk_cim                 | 20       | Splunk CIM Data Model Mapping                      | splunk, splunk_spl2 | splunk  |
-| sysmon                     | 10       | Generic Log Sources to Sysmon Transformation       | all                 | sysmon  |
-| windows-logsources         | 10       | Add Channel condition for Windows log sources      | all                 | windows |
-| windows-audit              | 10       | Map generic log sources to Windows audit logs      | all                 | windows |
-+----------------------------+----------+----------------------------------------------------+---------------------+---------+
+splunk_windows              Splunk Windows log source conditions
+splunk_sysmon_acceleration  Splunk Windows Sysmon search acceleration keywords
+splunk_cim                  Splunk CIM Data Model Mapping
+sysmon                      Generic Log Sources to Sysmon Transformation
+windows-logsources          Add Channel condition for Windows log sources
+windows-audit               Map generic log sources to Windows audit logs
 source="WinEventLog:Microsoft-Windows-Sysmon/Operational" EventCode=1 (CommandLine="*--config *" CommandLine="*--no-check-certificate *" CommandLine="* copy *") OR (Image="*\\rclone.exe" OR Description="Rsync for cloud storage" CommandLine IN ("*pass*", "*user*", "*copy*", "*sync*", "*config*", "*lsd*", "*remote*", "*ls*", "*mega*", "*pcloud*", "*ftp*", "*ignore-existing*", "*auto-confirm*", "*transfers*", "*multi-thread-streams*", "*no-check-certificate *"))
 source="WinEventLog:Security" EventCode=4688 (CommandLine="*--config *" CommandLine="*--no-check-certificate *" CommandLine="* copy *") OR (NewProcessName="*\\rclone.exe" OR Description="Rsync for cloud storage" CommandLine IN ("*pass*", "*user*", "*copy*", "*sync*", "*config*", "*lsd*", "*remote*", "*ls*", "*mega*", "*pcloud*", "*ftp*", "*ignore-existing*", "*auto-confirm*", "*transfers*", "*multi-thread-streams*", "*no-check-certificate *"))
 SELECT * FROM logs WHERE EventID=1 AND ((CommandLine LIKE '%--config %' ESCAPE '\' AND CommandLine LIKE '%--no-check-certificate %' ESCAPE '\' AND Com
