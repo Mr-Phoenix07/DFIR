@@ -39,6 +39,7 @@ A new lesson is posted **every day**. Each one covers:
 | 14 | 2026-10-11 | [Windows Event Logs: EVTX Structure & Key Event IDs](days/day-14-windows-event-logs-evtx.md) | EvtxECmd · evtx_dump · FullEventLogView | 🟡 |
 | 15 | 2026-10-12 | [Event-Log Threat Hunting with Sigma Rules](days/day-15-event-log-threat-hunting-sigma.md) | Hayabusa · Chainsaw · DeepBlueCLI | 🟡 |
 | 16 | 2026-10-13 | [Sysmon & Enhanced Logging for Investigators](days/day-16-sysmon-enhanced-logging.md) | Sysmon · sigma-cli (pySigma) · Zircolite | 🟡 |
+| 17 | 2026-10-14 | [SRUM, Recycle Bin & Windows Timeline (ActivitiesCache)](days/day-17-srum-recycle-bin-timeline.md) | SrumECmd · RBCmd · WxTCmd | 🟡 |
 <!-- NEXT-DAY-ROW -->
 
 Legend: 🟢 Beginner · 🟡 Intermediate · 🔴 Advanced
