@@ -38,6 +38,7 @@ A new lesson is posted **every day**. Each one covers:
 | 13 | 2026-10-10 | [File & Folder Knowledge: LNK Files, Jump Lists & ShellBags](days/day-13-lnk-jump-lists-shellbags.md) | LECmd · JLECmd · ShellBags Explorer (SBECmd) | 🟡 |
 | 14 | 2026-10-11 | [Windows Event Logs: EVTX Structure & Key Event IDs](days/day-14-windows-event-logs-evtx.md) | EvtxECmd · evtx_dump · FullEventLogView | 🟡 |
 | 15 | 2026-10-12 | [Event-Log Threat Hunting with Sigma Rules](days/day-15-event-log-threat-hunting-sigma.md) | Hayabusa · Chainsaw · DeepBlueCLI | 🟡 |
+| 16 | 2026-10-13 | [Sysmon & Enhanced Logging for Investigators](days/day-16-sysmon-enhanced-logging.md) | Sysmon · sigma-cli (pySigma) · Zircolite | 🟡 |
 <!-- NEXT-DAY-ROW -->
 
 Legend: 🟢 Beginner · 🟡 Intermediate · 🔴 Advanced
