@@ -249,7 +249,7 @@ rbcmd -d '/cases/WS-ALICE/C/$Recycle.Bin' --csv /cases/WS-ALICE/out --csvf recyc
 |---|---|
 | **What** | Parses the Windows Timeline database (`ActivitiesCache.db`) into CSVs of activities, pending operations and package IDs |
 | **Why in DFIR** | Which programs and files a user opened, and **for how long** each was in focus, with known-folder GUIDs translated into paths |
-| **Platforms** | Windows; **runs natively on Linux** (see its `LINUX.md`: built for `linux-x64`, it ships a Linux SQLite library). **Built and run on Ubuntu 24.04** (2026.5.0) |
+| **Platforms** | Windows; **runs natively on Linux** (see its `LINUX.md`: publish it for `linux-x64`). **Built and run on Ubuntu 24.04** (2026.5.0) |
 | **Licence** | MIT |
 | **Home** | https://github.com/EricZimmerman/WxTCmd |
 
@@ -276,7 +276,7 @@ DOTNET_ROLL_FORWARD=Major ~/tools/WxTCmd/WxTCmd --version
 | Option | Meaning |
 |---|---|
 | `-f FILE` | `ActivitiesCache.db` (keep `-wal`/`-shm` next to it) |
-| `--csv DIR` | Output: `<timestamp>_Activity.csv`, `_Activity_PackageIDs.csv` and, when present, `_ActivityOperations.csv` |
+| `--csv DIR` | Output: `*_Activity.csv`, `*_Activity_PackageIDs.csv` and, when present, `*_ActivityOperations.csv`, named with the run time and the profile folder (`L.<user>`) |
 | `--dt FORMAT` | Timestamp format |
 
 #### Verify the installation
@@ -574,7 +574,7 @@ Activity entries found: 30
 2022-03-05 20:56:24  InFocus     Microsoft.Windows.Explorer                     in focus 00:14:12 until 21:10:36
 ```
 
-A test VM's afternoon, minute by minute: File Explorer, then **`D:\setup64.exe`** (an installer on a mounted disc, D:) opened at 13:37:08 and in focus for about two and a half minutes, Windows Installer, **Windows Terminal** opened at 13:40:29 and in the foreground, on and off, until 20:56:24, and Notepad opening **`C:\temp.txt`** at 13:44:46. The eleven **CopyPaste** records (in the CSV) say copy and paste happened in Terminal and Explorer, but not *what*: clipboard history wasn't on. On a case, the same output tells you which file alice had open in which program, and for how long, as long as the machine still keeps the activity (WS-ALICE is Windows 11: check the database, with its WAL, rather than assume).
+A test VM's afternoon, minute by minute: File Explorer, then **`D:\setup64.exe`** (an installer on a mounted disc, D:) opened at 13:37:08 and in focus for about two and a half minutes, Windows Installer, **Windows Terminal** opened at 13:40:29, and Notepad opening **`C:\temp.txt`** at 13:44:46. Terminal's one InFocus record runs 7 h 16 min, to 20:56:24, and overlaps the Explorer and Notepad records: focus records can overlap, so treat long durations as approximate. The eleven **CopyPaste** records (in the CSV) say copy and paste happened in Terminal and Explorer, but not *what*: clipboard history wasn't on. On a case, the same output tells you which file alice had open in which program, and for how long, as long as the machine still keeps the activity (WS-ALICE is Windows 11: check the database, with its WAL, rather than assume).
 
 ---
 
