@@ -42,6 +42,7 @@ A new lesson is posted **every day**. Each one covers:
 | 17 | 2026-10-14 | [SRUM, Recycle Bin & Windows Timeline (ActivitiesCache)](days/day-17-srum-recycle-bin-timeline.md) | SrumECmd · RBCmd · WxTCmd | 🟡 |
 | 18 | 2026-10-15 | [Browser Forensics: Chromium, Firefox & Edge](days/day-18-browser-forensics-chromium-firefox-edge.md) | Hindsight · BrowsingHistoryView · DB Browser for SQLite | 🟡 |
 | 19 | 2026-10-16 | [Email Forensics: PST/OST, EML/MSG & Header Analysis](days/day-19-email-forensics-pst-ost-eml-msg-headers.md) | libpff (pffexport) · readpst · eml_analyzer | 🟡 |
+| 20 | 2026-10-17 | [Volume Shadow Copies & BitLocker Volumes](days/day-20-volume-shadow-copies-bitlocker.md) | libvshadow · dislocker · ShadowExplorer | 🟡 |
 <!-- NEXT-DAY-ROW -->
 
 Legend: 🟢 Beginner · 🟡 Intermediate · 🔴 Advanced
