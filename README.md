@@ -40,6 +40,8 @@ A new lesson is posted **every day**. Each one covers:
 | 15 | 2026-10-12 | [Event-Log Threat Hunting with Sigma Rules](days/day-15-event-log-threat-hunting-sigma.md) | Hayabusa · Chainsaw · DeepBlueCLI | 🟡 |
 | 16 | 2026-10-13 | [Sysmon & Enhanced Logging for Investigators](days/day-16-sysmon-enhanced-logging.md) | Sysmon · sigma-cli (pySigma) · Zircolite | 🟡 |
 | 17 | 2026-10-14 | [SRUM, Recycle Bin & Windows Timeline (ActivitiesCache)](days/day-17-srum-recycle-bin-timeline.md) | SrumECmd · RBCmd · WxTCmd | 🟡 |
+| 18 | 2026-10-15 | [Browser Forensics: Chromium, Firefox & Edge](days/day-18-browser-forensics-chromium-firefox-edge.md) | Hindsight · BrowsingHistoryView · DB Browser for SQLite | 🟡 |
+| 19 | 2026-10-16 | [Email Forensics: PST/OST, EML/MSG & Header Analysis](days/day-19-email-forensics-pst-ost-eml-msg-headers.md) | libpff (pffexport) · readpst · eml_analyzer | 🟡 |
 <!-- NEXT-DAY-ROW -->
 
 Legend: 🟢 Beginner · 🟡 Intermediate · 🔴 Advanced
