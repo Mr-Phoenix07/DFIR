@@ -90,7 +90,7 @@ def build(root, file_name, last_written):
     hv = Hive()
     sd = security_descriptor()
     sk_off = hv.cell(b"sk" + b"\0\0" + struct.pack("<IIII", 0, 0, 0, len(sd)) + sd)
-    hv.patch(sk_off, "<I", sk_off)      # flink -> itself
+    struct.pack_into("<I", hv.buf, sk_off + 4 + 4, sk_off)  # flink -> itself (after "sk" and 2 reserved bytes)
     struct.pack_into("<I", hv.buf, sk_off + 4 + 8, sk_off)  # blink -> itself
     keys = []
 

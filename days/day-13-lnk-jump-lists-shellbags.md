@@ -567,7 +567,7 @@ lnkinfo $R/upload-howto.txt.lnk | grep -E 'Drive type|Network path|Machine ident
    5120  Users/alice/AppData/Roaming/Microsoft/Windows/Recent/AutomaticDestinations/9b9cdc69c1c24e2b.automaticDestinations-ms
    4608  Users/alice/AppData/Roaming/Microsoft/Windows/Recent/AutomaticDestinations/b8ab77100df80ab2.automaticDestinations-ms
    6144  Users/alice/AppData/Roaming/Microsoft/Windows/Recent/AutomaticDestinations/f01b4d95cf55d32a.automaticDestinations-ms
-c5bba621f0a808b9  Users/alice/AppData/Local/Microsoft/Windows/UsrClass.dat
+e040ee66302cef38  Users/alice/AppData/Local/Microsoft/Windows/UsrClass.dat
 7934c94fc6b10339  Users/alice/AppData/Roaming/Microsoft/Windows/Recent/AutomaticDestinations/9b9cdc69c1c24e2b.automaticDestinations-ms
 4603ca2749582798  Users/alice/AppData/Roaming/Microsoft/Windows/Recent/AutomaticDestinations/b8ab77100df80ab2.automaticDestinations-ms
 6de1e3dfc0dc5f9a  Users/alice/AppData/Roaming/Microsoft/Windows/Recent/AutomaticDestinations/f01b4d95cf55d32a.automaticDestinations-ms
