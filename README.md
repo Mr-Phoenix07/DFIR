@@ -42,6 +42,10 @@ A new lesson is posted **every day**. Each one covers:
 | 17 | 2026-10-14 | [SRUM, Recycle Bin & Windows Timeline (ActivitiesCache)](days/day-17-srum-recycle-bin-timeline.md) | SrumECmd · RBCmd · WxTCmd | 🟡 |
 | 18 | 2026-10-15 | [Browser Forensics: Chromium, Firefox & Edge](days/day-18-browser-forensics-chromium-firefox-edge.md) | Hindsight · BrowsingHistoryView · DB Browser for SQLite | 🟡 |
 | 19 | 2026-10-16 | [Email Forensics: PST/OST, EML/MSG & Header Analysis](days/day-19-email-forensics-pst-ost-eml-msg-headers.md) | libpff (pffexport) · readpst · eml_analyzer | 🟡 |
+| 20 | 2026-10-17 | [Volume Shadow Copies & BitLocker Volumes](days/day-20-volume-shadow-copies-bitlocker.md) | libvshadow · dislocker · ShadowExplorer | 🟡 |
+| 21 | 2026-10-18 | [Super Timelines: Building and Analysing](days/day-21-super-timelines-plaso-timesketch.md) | Plaso (log2timeline) · Timeline Explorer · Timesketch | 🟡→🔴 |
+| 22 | 2026-10-19 | [Windows Persistence Hunting](days/day-22-windows-persistence-hunting.md) | Autoruns · PersistenceSniper · Trawler | 🔴 |
+| 23 | 2026-10-20 | [Memory Forensics Fundamentals & Windows RAM Acquisition](days/day-23-memory-forensics-ram-acquisition.md) | WinPmem · Magnet RAM Capture · Belkasoft Live RAM Capturer | 🟡→🔴 |
 <!-- NEXT-DAY-ROW -->
 
 Legend: 🟢 Beginner · 🟡 Intermediate · 🔴 Advanced

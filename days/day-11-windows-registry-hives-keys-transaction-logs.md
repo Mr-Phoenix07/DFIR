@@ -422,9 +422,9 @@ rip -r evidence/WS-ALICE/SYSTEM -d
    8192  SYSTEM
    8192  SOFTWARE
    8192  NTUSER.DAT
-bbeafe368c7d3ec39b85eab9d82d458b6d83ca4fd9ff2e5a23bf2c1952695bf4  evidence/WS-ALICE/NTUSER.DAT
-900593bcbe53833849dd7e533586bbb7e7f17b06b2b05af599b2011d8e8c023a  evidence/WS-ALICE/SOFTWARE
-82fc6ae2626d1657ef2b09d39b9d871f7042e34741eedaee43393c7ef269e85e  evidence/WS-ALICE/SYSTEM
+997e9d2b078fccd0ae021636551f01bd6338a1b734239b3973f43b43d84693c4  evidence/WS-ALICE/NTUSER.DAT
+3f5f6e8f18f2da76d248593b54e497aae705c02678cfaf5cbf8574b593ef150d  evidence/WS-ALICE/SOFTWARE
+8871c2b91d355a76ca34eae080766fec9b5305421e80fcdb32ce21fce0630f81  evidence/WS-ALICE/SYSTEM
 00000000: 7265 6766 0100 0000 0100 0000 b13c 4af3  regf.........<J.
 00000010: b04f dd01 0100 0000 0500 0000 0000 0000  .O..............
 00000020: 0100 0000 9800 0000 0010 0000 0100 0000  ................
@@ -437,7 +437,7 @@ Root key cell   : 0x98    hive bins data size: 4096 bytes
 Embedded name   : stemRoot\System32\Config\SYSTEM
 Checksum        : stored 0x94f30692, calculated 0x94f30692 -> OK
 hbins           : 1 found with an 'hbin' signature at 4 KB boundaries
-Cells           : data/list FREE: 5, data/list used: 18, lh used: 5, nk FREE: 1, nk used: 11, vk FREE: 6, vk used: 23
+Cells           : data/list FREE: 5, data/list used: 17, lh used: 5, nk FREE: 1, nk used: 11, sk used: 1, vk FREE: 6, vk used: 23
 ntuser
 ***Hive Check***
 Hive is not dirty.
