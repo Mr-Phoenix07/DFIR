@@ -46,6 +46,7 @@ A new lesson is posted **every day**. Each one covers:
 | 21 | 2026-10-18 | [Super Timelines: Building and Analysing](days/day-21-super-timelines-plaso-timesketch.md) | Plaso (log2timeline) · Timeline Explorer · Timesketch | 🟡→🔴 |
 | 22 | 2026-10-19 | [Windows Persistence Hunting](days/day-22-windows-persistence-hunting.md) | Autoruns · PersistenceSniper · Trawler | 🔴 |
 | 23 | 2026-10-20 | [Memory Forensics Fundamentals & Windows RAM Acquisition](days/day-23-memory-forensics-ram-acquisition.md) | WinPmem · Magnet RAM Capture · Belkasoft Live RAM Capturer | 🟡→🔴 |
+| 24 | 2026-10-21 | [Memory Analysis Essentials: Processes, DLLs, Handles, Network](days/day-24-memory-analysis-essentials.md) | Volatility 3 · Volatility Workbench · MemProcFS | 🔴 |
 <!-- NEXT-DAY-ROW -->
 
 Legend: 🟢 Beginner · 🟡 Intermediate · 🔴 Advanced
