@@ -48,6 +48,8 @@ A new lesson is posted **every day**. Each one covers:
 | 23 | 2026-10-20 | [Memory Forensics Fundamentals & Windows RAM Acquisition](days/day-23-memory-forensics-ram-acquisition.md) | WinPmem · Magnet RAM Capture · Belkasoft Live RAM Capturer | 🟡→🔴 |
 | 24 | 2026-10-21 | [Memory Analysis Essentials: Processes, DLLs, Handles, Network](days/day-24-memory-analysis-essentials.md) | Volatility 3 · Volatility Workbench · MemProcFS | 🔴 |
 | 25 | 2026-10-22 | [Hunting Malicious Code in Memory: Injection, Hollowing, Shellcode](days/day-25-hunting-malicious-code-in-memory.md) | YARA · PE-sieve / HollowsHunter · Moneta | 🔴 |
+| 26 | 2026-10-23 | [Linux & macOS Memory Acquisition and Symbol Tables](days/day-26-linux-macos-memory-acquisition-symbols.md) | LiME · AVML · dwarf2json | 🔴 |
+| 27 | 2026-10-24 | [Hibernation Files, Pagefile & Crash Dumps](days/day-27-hibernation-pagefile-crash-dumps.md) | Hibernation Recon · bstrings · WinDbg | 🟡→🔴 |
 <!-- NEXT-DAY-ROW -->
 
 Legend: 🟢 Beginner · 🟡 Intermediate · 🔴 Advanced
