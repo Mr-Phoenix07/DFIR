@@ -52,6 +52,7 @@ A new lesson is posted **every day**. Each one covers:
 | 27 | 2026-10-24 | [Hibernation Files, Pagefile & Crash Dumps](days/day-27-hibernation-pagefile-crash-dumps.md) | Hibernation Recon · bstrings · WinDbg | 🟡→🔴 |
 | 28 | 2026-10-25 | [Network Forensics Fundamentals & Packet Capture](days/day-28-network-forensics-packet-capture.md) | tcpdump · Wireshark (tshark) · NetworkMiner | 🟡→🔴 |
 | 29 | 2026-10-26 | [Network Security Monitoring: Logs, Alerts & Beacon Detection](days/day-29-network-security-monitoring-beacons.md) | Zeek · Suricata · RITA | 🔴 |
+| 30 | 2026-10-27 | [Working with PCAP at Scale](days/day-30-working-with-pcap-at-scale.md) | Arkime · Zui · Malcolm | 🔴 |
 <!-- NEXT-DAY-ROW -->
 
 Legend: 🟢 Beginner · 🟡 Intermediate · 🔴 Advanced
