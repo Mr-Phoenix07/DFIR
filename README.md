@@ -53,6 +53,7 @@ A new lesson is posted **every day**. Each one covers:
 | 28 | 2026-10-25 | [Network Forensics Fundamentals & Packet Capture](days/day-28-network-forensics-packet-capture.md) | tcpdump · Wireshark (tshark) · NetworkMiner | 🟡→🔴 |
 | 29 | 2026-10-26 | [Network Security Monitoring: Logs, Alerts & Beacon Detection](days/day-29-network-security-monitoring-beacons.md) | Zeek · Suricata · RITA | 🔴 |
 | 30 | 2026-10-27 | [Working with PCAP at Scale](days/day-30-working-with-pcap-at-scale.md) | Arkime · Zui · Malcolm | 🔴 |
+| 31 | 2026-10-28 | [Encrypted Traffic: TLS, Fingerprints (JA3/JA4) & Decryption](days/day-31-encrypted-traffic-tls-ja3-ja4.md) | mitmproxy · JA4+ · PolarProxy | 🔴 |
 <!-- NEXT-DAY-ROW -->
 
 Legend: 🟢 Beginner · 🟡 Intermediate · 🔴 Advanced
